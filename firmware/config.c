@@ -17,18 +17,18 @@
 //   HDMI_IN1 (if it exists)
 //   HDMI_IN0 (if it exists)
 //   PATTERN
-#ifdef CSR_HDMI_IN1_BASE
-	#define VIDEO_IN_DEFAULT VIDEO_IN_HDMI_IN1
+//#ifdef CSR_HDMI_IN1_BASE
+//	#define VIDEO_IN_DEFAULT VIDEO_IN_HDMI_IN1
 //	#warning "Default HDMI In 1"
-#else
-#ifdef CSR_HDMI_IN0_BASE
-	#define VIDEO_IN_DEFAULT VIDEO_IN_HDMI_IN0
+//#else
+//#ifdef CSR_HDMI_IN0_BASE
+#define VIDEO_IN_DEFAULT VIDEO_IN_HDMI_IN0
 //	#warning "Default HDMI In 0"
-#else
-	#define VIDEO_IN_DEFAULT VIDEO_IN_PATTERN
+//#else
+//	#define VIDEO_IN_DEFAULT VIDEO_IN_PATTERN
 //	#warning "Default Pattern"
-#endif
-#endif
+//#endif
+//#endif
 
 
 static const unsigned char config_defaults[CONFIG_KEY_COUNT] = {
@@ -41,8 +41,8 @@ static const unsigned char config_defaults[CONFIG_KEY_COUNT] = {
 	PROCESSOR_MODE_720p_60, // Secondary
 #endif
 	// Input config
-	false, // Input0
-	true,  // Input1
+	true, // Input0
+	false,  // Input1
 	// Output config
 	true, VIDEO_IN_DEFAULT, // Output 0
 	true, VIDEO_IN_DEFAULT, // Output 1
